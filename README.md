@@ -4,6 +4,6 @@
 系級：科技系三年級<br>
 
 ## 作業
-### H1
+### Hw1
 [Hw1 Code](https://www.youtube.com/)<br>
 [Hw1 Video](https://www.google.com.tw/?hl=zh_TW)
