@@ -6,4 +6,4 @@
 ## 作業
 ### Hw1
 [Hw1 Code](https://www.youtube.com/)<br>
-[Hw1 Video](https://www.google.com.tw/?hl=zh_TW)
+[Hw1 Video](https://youtu.be/aj0eIJ2fpt4)
