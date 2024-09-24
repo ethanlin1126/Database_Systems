@@ -5,5 +5,5 @@
 
 ## 作業
 ### Hw1
-[Hw1 Code](https://www.youtube.com/)<br>
+[Hw1 Code](https://github.com/ethanlin1126/Database/tree/main/HW1)<br>
 [Hw1 Video](https://youtu.be/aj0eIJ2fpt4)
