@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 30px;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+        }
+        table {
+            width: 80%;
+            margin-top: 20px;
+        }
+        td[contenteditable="true"] {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Employee Data</h1>
+    <form id="employeeForm">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="age" class="form-label">Age</label>
+            <input type="number" class="form-control" id="age" name="age" required>
+        </div>
+        <div class="mb-3">
+            <label for="position" class="form-label">Position</label>
+            <input type="text" class="form-control" id="position" name="position" required>
+        </div>
+        <div class="mb-3">
+            <label for="salary" class="form-label">Salary</label>
+            <input type="number" class="form-control" id="salary" name="salary" step="0.01" required>
+        </div>
+        <button type="submit" class="btn btn-submit">Submit</button>
+    </form>
+</div>
+
+<!-- 員工資料表 -->
+<div class="container">
+    <h2>Employee Records</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTableBody">
+            {% for employee in employees %}
+            <tr id="employee-{{ employee[0] }}">
+                <td>{{ employee[0] }}</td>
+                <td contenteditable="false">{{ employee[1] }}</td>
+                <td contenteditable="false">{{ employee[2] }}</td>
+                <td contenteditable="false">{{ employee[3] }}</td>
+                <td contenteditable="false">{{ employee[4] }}</td>
+                <td>
+                    <button class="btn btn-warning btn-sm edit-btn" data-id="{{ employee[0] }}">Edit</button>
+                    <button class="btn btn-danger btn-sm delete-btn" data-id="{{ employee[0] }}">Delete</button>
+                    <button class="btn btn-success btn-sm save-btn" data-id="{{ employee[0] }}" style="display: none;">Save</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // 非同步提交表單
+        $('#employeeForm').on('submit', function(e) {
+            e.preventDefault(); // 阻止表單的預設行為
+
+            $.ajax({
+                url: '/submit',
+                type: 'POST',
+                data: $(this).serialize(),
+                success: function(response) {
+                    $('#employeeTableBody').append(
+                        '<tr id="employee-' + response.id + '">' +
+                        '<td>' + response.id + '</td>' +
+                        '<td contenteditable="false">' + response.name + '</td>' +
+                        '<td contenteditable="false">' + response.age + '</td>' +
+                        '<td contenteditable="false">' + response.position + '</td>' +
+                        '<td contenteditable="false">' + response.salary + '</td>' +
+                        '<td>' +
+                        '<button class="btn btn-warning btn-sm edit-btn" data-id="' + response.id + '">Edit</button>' +
+                        '<button class="btn btn-danger btn-sm delete-btn" data-id="' + response.id + '">Delete</button>' +
+                        '<button class="btn btn-success btn-sm save-btn" data-id="' + response.id + '" style="display: none;">Save</button>' +
+                        '</td>' +
+                        '</tr>'
+                    );
+
+                    $('#employeeForm')[0].reset();
+                }
+            });
+        });
+
+        // 編輯按鈕
+        $(document).on('click', '.edit-btn', function() {
+            var id = $(this).data('id');
+            var row = $('#employee-' + id);
+            row.find('td[contenteditable]').attr('contenteditable', 'true').css('background-color', '#f0f0f0');
+            row.find('.save-btn').show();
+            $(this).hide();
+        });
+
+        // 保存按鈕
+        $(document).on('click', '.save-btn', function() {
+            var id = $(this).data('id');
+            var row = $('#employee-' + id);
+
+            var name = row.find('td:eq(1)').text();
+            var age = row.find('td:eq(2)').text();
+            var position = row.find('td:eq(3)').text();
+            var salary = row.find('td:eq(4)').text();
+
+            $.ajax({
+                url: '/update/' + id,
+                type: 'POST',
+                data: {
+                    name: name,
+                    age: age,
+                    position: position,
+                    salary: salary
+                },
+                success: function(response) {
+                    if (response.status === 'success') {
+                        row.find('td[contenteditable]').attr('contenteditable', 'false').css('background-color', '');
+                        row.find('.save-btn').hide();
+                        row.find('.edit-btn').show();
+                    }
+                }
+            });
+        });
+
+        // 刪除按鈕
+        $(document).on('click', '.delete-btn', function() {
+            var id = $(this).data('id');
+            var row = $('#employee-' + id);
+
+            $.ajax({
+                url: '/delete/' + id,
+                type: 'POST',
+                success: function(response) {
+                    if (response.status === 'success') {
+                        row.remove();
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
