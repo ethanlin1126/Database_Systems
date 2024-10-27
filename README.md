@@ -13,5 +13,7 @@
 [Week8_NoSQL + Flask](https://docs.google.com/presentation/d/122ROgAdilhbRa8ksyruu08j4coh65N_wJz0mnfjT0vE/edit#slide=id.g23dd2219a46_0_124)<br>
 ## Assignments
 ### HW1
-[HW1 Code](https://github.com/ethanlin1126/Database/tree/main/HW1)<br>
-[HW1 Video](https://youtu.be/aj0eIJ2fpt4)
+[HW1_Code](https://github.com/ethanlin1126/Database/tree/main/HW1)<br>
+[HW1_Video](https://youtu.be/aj0eIJ2fpt4)
+### HW2
+[HW2_Code](https://github.com/ethanlin1126/Database_Systems/tree/main/HW2)
