@@ -16,5 +16,5 @@
 [HW1_Code](https://github.com/ethanlin1126/Database/tree/main/HW1)<br>
 [HW1_Video](https://youtu.be/aj0eIJ2fpt4)
 ### HW2
-[HW2_Code](https://github.com/ethanlin1126/Database_Systems/tree/main/HW2)
+[HW2_Code](https://github.com/ethanlin1126/Database_Systems/tree/main/HW2)<br>
 [HW2_Video](https://youtu.be/K9RVzJbaahQ)
