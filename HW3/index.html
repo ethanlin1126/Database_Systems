@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .form-container {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        input[type="text"], input[type="number"], button {
+            margin: 5px 0;
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .action-buttons button {
+            padding: 5px 10px;
+        }
+        .action-buttons form {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Management</h1>
+
+    <!-- 新增資料表單 -->
+    <div class="form-container">
+        <form action="/add" method="POST">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="number" name="age" placeholder="Age" required>
+            <input type="text" name="position" placeholder="Position" required>
+            <input type="number" name="salary" placeholder="Salary" step="0.01" required>
+            <button type="submit">Add Employee</button>
+        </form>
+    </div>
+
+    <!-- 顯示資料表格 -->
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in data %}
+            <tr>
+                <form action="/update/{{ employee._id }}" method="POST">
+                    <td>
+                        <input type="text" name="name-{{ employee._id }}" value="{{ employee.name }}" required>
+                    </td>
+                    <td>
+                        <input type="number" name="age-{{ employee._id }}" value="{{ employee.age }}" required>
+                    </td>
+                    <td>
+                        <input type="text" name="position-{{ employee._id }}" value="{{ employee.position }}" required>
+                    </td>
+                    <td>
+                        <input type="number" name="salary-{{ employee._id }}" value="{{ employee.salary }}" step="0.01" required>
+                    </td>
+                    <td class="action-buttons">
+                        <button type="submit">Update</button>
+                    </form>
+                    <form action="/delete/{{ employee._id }}" method="GET" style="display: inline;">
+                        <button type="submit" style="background-color: #FF4C4C;">Delete</button>
+                    </form>
+                    </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
