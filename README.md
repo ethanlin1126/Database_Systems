@@ -19,8 +19,8 @@
 [HW2_Code](https://github.com/ethanlin1126/Database_Systems/tree/main/HW2)<br>
 [HW2_ER Diagram](https://github.com/ethanlin1126/Database_Systems/blob/main/HW2/ER.png)<br>
 [HW2_Video](https://youtu.be/K9RVzJbaahQ)
-### HW3
-[HW3_Code](https://github.com/ethanlin1126/Database/tree/main/HW3)<br>
-[HW3_Video](https://youtu.be/O5Ai7qSeHlg)
+### HW3 & HW4
+[HW3 & HW4_Code](https://github.com/ethanlin1126/Database/tree/main/HW3)<br>
+[HW3 & HW4_Video](https://youtu.be/O5Ai7qSeHlg)
 
 
