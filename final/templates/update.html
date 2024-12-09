@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Reservation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffefd5, #ffe4c4);
+            font-family: 'Arial', sans-serif;
+        }
+        .brand-heading {
+            color: #d35400;
+            font-weight: bold;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #2980b9;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #2471a3;
+        }
+        .btn-danger {
+            background-color: #e74c3c;
+            border: none;
+        }
+        .btn-danger:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center brand-heading mb-4">Update Your Reservation</h1>
+        <div class="card mx-auto p-4" style="max-width: 500px; background-color: #fff;">
+            <form action="/update" method="post">
+                <input type="hidden" name="id" value="{{ reservation.id }}">
+                <div class="mb-3">
+                    <label for="date" class="form-label">New Reservation Date</label>
+                    <input type="date" class="form-control" id="date" name="date" value="{{ reservation.date }}" required>
+                </div>
+                <div class="mb-3">
+                    <label for="people" class="form-label">New Number of People</label>
+                    <input type="number" class="form-control" id="people" name="people" value="{{ reservation.people }}" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-3">Update Reservation</button>
+            </form>
+            <form action="/delete" method="post">
+                <input type="hidden" name="id" value="{{ reservation.id }}">
+                <button type="submit" class="btn btn-danger w-100">Delete Reservation</button>
+            </form>
+        </div>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>

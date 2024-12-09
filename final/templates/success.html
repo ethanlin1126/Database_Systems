@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Success</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffefd5, #ffe4c4);
+            font-family: 'Arial', sans-serif;
+        }
+        .brand-heading {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #c0392b;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #a93226;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center brand-heading mb-4">Reservation Successful!</h1>
+        <div class="card mx-auto p-4" style="max-width: 500px; background-color: #fff;">
+            <h2 class="text-center mb-3">Your Reservation Details</h2>
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Phone:</strong> {{ phone }}</p>
+            <p><strong>Date:</strong> {{ date }}</p>
+            <p><strong>Number of People:</strong> {{ people }}</p>
+            <a href="/" class="btn btn-primary w-100 mt-4">Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
