@@ -20,17 +20,39 @@ def index():
         date = request.form['date']
         people = request.form['people']
 
-        connection = mysql.connector.connect(**db_config)
-        cursor = connection.cursor()
-        cursor.execute("INSERT INTO reservations (name, phone, date, people) VALUES (%s, %s, %s, %s)",
-                       (name, phone, date, people))
-        connection.commit()
-        cursor.close()
-        connection.close()
+        try:
+            connection = mysql.connector.connect(**db_config)
+            cursor = connection.cursor()
+
+            # 插入姓名與電話
+            cursor.execute(
+                "INSERT INTO reservations_name_phone (name, phone) VALUES (%s, %s)", 
+                (name, phone)
+            )
+            
+            # 插入姓名與日期
+            cursor.execute(
+                "INSERT INTO reservations_name_date (name, date) VALUES (%s, %s)", 
+                (name, date)
+            )
+            
+            # 插入姓名與預約人數
+            cursor.execute(
+                "INSERT INTO reservations_name_people (name, people) VALUES (%s, %s)", 
+                (name, people)
+            )
+            
+            connection.commit()
+        except mysql.connector.Error as e:
+            print(f"Error: {e}")
+        finally:
+            cursor.close()
+            connection.close()
 
         return redirect(url_for('success', name=name, phone=phone, date=date, people=people))
 
     return render_template('index.html')
+
 
 # Success page
 @app.route('/success')
