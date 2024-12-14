@@ -7,7 +7,7 @@ app = Flask(__name__)
 conn = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='amber1126',
+    password='password',
     database='restaurant_reservation'
 )
 cursor = conn.cursor()
