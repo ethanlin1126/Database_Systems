@@ -25,8 +25,8 @@
 [HW3 & HW4_Video](https://youtu.be/O5Ai7qSeHlg)
 *****
 ## Final Project
-[Code](https://github.com/ethanlin1126/Database_Systems/tree/main/final)
-[Video](https://github.com/ethanlin1126/Database_Systems/tree/main/final)
+[Code](https://github.com/ethanlin1126/Database_Systems/tree/main/final)<br>
+[Video](https://youtu.be/2e0PjJJh6Q4)
 
 
 
