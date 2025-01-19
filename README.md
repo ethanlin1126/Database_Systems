@@ -1,7 +1,6 @@
 # [2024 Fall] Database Systems<br>
 Lecturer：Assoc. Prof. Yun-Cheng Tsai<br>
 Name：Hsuan-Yu Lin<br>
-*****
 ## Assignments
 ### HW1
 [HW1_Code](https://github.com/ethanlin1126/Database/tree/main/HW1)<br>
