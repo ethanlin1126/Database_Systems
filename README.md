@@ -1,5 +1,5 @@
 # [2024 Fall] Database Systems<br>
-Lecturer：Assoc. Prof. Yun-Cheng Tsai<br>
+Lecturer：Yun-Cheng Tsai<br>
 Name：Hsuan-Yu Lin<br>
 ## Assignments
 ### HW1
