@@ -80,11 +80,11 @@ restaurant-reservation/
 │
 ├── app.py                   # Main Flask application
 ├── templates/               # HTML templates
-├── static/                  # CSS/JS static files
-├── requirements.txt         # Python dependencies
-├── package.json             # npm dependencies
-├── schema.sql               # Optional: SQL schema file
-└── README.md                # Project documentation
+│   ├── manage.html          # View or manage existing reservations
+│   ├── success.html         # Reservation success page
+│   ├── update.html          # Reservation update form
+│   └── index.html           # Reservation form page
+└── README.md                # Project documentation         
 ```
 
 
