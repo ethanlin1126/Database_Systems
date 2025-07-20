@@ -3,13 +3,13 @@ A simple web-based restaurant reservation system built with Python Flask for the
 
 ## 📖 Table of Contents
 
-- [Introduction](##introduction)
-- [Features](##features)
-- [Installation](##installation)
-- [Usage](##usage)
-- [Database Configuration](##database-configuration)
-- [Tech Stack](##tech-stack)
-- [Project Structure](##project-structure)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Database Configuration](#database-configuration)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
 
 ## 📘 Introduction
 
