@@ -5,7 +5,6 @@ A simple web-based restaurant reservation system built with Python Flask for the
 
 - [Introduction](#introduction)
 - [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
 - [Database Configuration](#database-configuration)
 - [Project Structure](#project-structure)
@@ -23,8 +22,6 @@ This project is a basic reservation management system for restaurants. It uses *
 - ✏️ Edit existing reservations  
 - ❌ Delete/cancel reservations
 
----
-
 ## Usage
 ▶️ Start Flask Backend
 ```text
@@ -34,8 +31,6 @@ Once both servers are running, open your browser and go to:
 ```text
 http://localhost:3000
 ```
-
----
 
 ## Database Configuration
 1. Create MySQL Database
@@ -66,8 +61,6 @@ db = mysql.connector.connect(
 )
 ```
 Make sure your MySQL server is running before launching the app.
-
----
 
 ## Project Structure
 
