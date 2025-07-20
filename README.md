@@ -30,10 +30,6 @@ This project is a basic reservation management system for restaurants. It uses *
 ```text
 python app.py
 ```
-▶️ Start Frontend Development Server
-```text
-npm start
-```
 Once both servers are running, open your browser and go to:
 ```text
 http://localhost:3000
