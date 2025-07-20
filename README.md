@@ -1,14 +1,13 @@
 # 🍽️ Restaurant Reservation System
 A simple web-based restaurant reservation system built with Python Flask for the backend and MySQL for data storage. It allows users to create, view, edit, and delete reservation records through a user-friendly interface.
 
-## 📖 Table of Contents
+## Table of Contents
 
 - [Introduction](#introduction)
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Database Configuration](#database-configuration)
-- [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 
 ## Introduction
@@ -26,7 +25,7 @@ This project is a basic reservation management system for restaurants. It uses *
 
 ---
 
-## 🧪 Usage
+## Usage
 ▶️ Start Flask Backend
 ```text
 python app.py
@@ -42,7 +41,7 @@ http://localhost:3000
 
 ---
 
-## 🧾 Database Configuration
+## Database Configuration
 1. Create MySQL Database
 Use MySQL Workbench or your preferred tool to create a database named (for example) reservation_db.
 
@@ -74,18 +73,7 @@ Make sure your MySQL server is running before launching the app.
 
 ---
 
-## 🧰 Tech Stack
-Backend: Python 3 + Flask
-
-Database: MySQL 
-
-Frontend: HTML, CSS
-
-Tools: npm, Node.js
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```text
 restaurant-reservation/
