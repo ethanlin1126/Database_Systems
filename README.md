@@ -11,13 +11,13 @@ A simple web-based restaurant reservation system built with Python Flask for the
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
 
-## 📘 Introduction
+## Introduction
 
 This project is a basic reservation management system for restaurants. It uses **Flask** to handle backend routing and logic, connects to a **MySQL database**, and optionally includes a frontend powered by HTML/CSS/JS with **npm** for dependency management.
 
 ---
 
-## 🚀 Features
+## Features
 
 - 🔍 View all reservations  
 - ➕ Create new reservations  
